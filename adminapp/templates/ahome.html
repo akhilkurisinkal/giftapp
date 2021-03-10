@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<script type="text/javascript" >
+function preventBack(){window.history.forward();}
+setTimeout("preventBack()", 0);
+window.onunload=function(){null};
+</script>
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/ahome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/aorderview">Orders</a>               
+                <a class="nav-item nav-link ln" href="/acustomerview">Customers</a>
+                <a class="nav-item nav-link ln" href="/asellerview">Sellers</a>
+                <a class="nav-item nav-link ln" href="/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:10%;">
+            <div class="row"> 
+                <div  class="col-md-4 col-sm-12 ad">
+                  <center>
+                    <a href="/acustomerview">
+                  <p><img src="{% static 'images/customer.png' %}" width="100" height="100"></p>
+                    <p style="font-size:24px;font-family:'Arvo';">View Customers</p>
+                  </a>
+                  </center>
+                </div>  
+                <div  class="col-md-4 col-sm-12 ad">
+                  <center>
+                    <a href="/asellerview">
+                  <p><img src="{% static 'images/sellerim.png' %}" width="100" height="100"></p>
+                    <p style="font-size:24px;font-family:'Arvo';">View Sellers</p>
+                  </a>
+                  </center>
+                </div> 
+
+                 <div  class="col-md-4 col-sm-12 ad">
+                  <center>
+                    <a href="/aorderview">
+                  <p><img src="{% static 'images/orderim.png' %}" width="100" height="100"></p>
+                    <p style="font-size:24px;font-family:'Arvo';">View Orders</p>
+                  </a>
+                  </center>
+                </div>  
+
+                
+            </div>      
+        </div>
+        
+{% endblock %}

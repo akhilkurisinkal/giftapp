@@ -1,0 +1,50 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/ahome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/aorderview">Orders</a>               
+                <a class="nav-item nav-link ln" href="/acustomerview">Customers</a>
+                <a class="nav-item nav-link ln" href="/asellerview">Sellers</a>
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:10%;">
+            <table border="2">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+                <tr style="color:red;">
+                    <td><center>Name</center></td><td><center>Address</center></td>
+                    <td><center>Date</center></td><td><center>Time</center></td>
+                    <td><center>Item Name</center></td><td><center>Amount</center></td>
+                    <td><center>Item Image</center></td>
+                </tr>
+
+                {% for i in orders %}
+                    <tr style="color:blue;">
+                          <td><center>{{i.customer}}</center></td>
+                          <td><center>{{i.caddress}}</center></td>
+                          <td><center>{{i.cdate}}</center></td>
+                          <td><center>{{i.ctime}}</center></td>
+                          <td><center>{{i.citemname}}</center></td>
+                          <td><center>{{i.camount}}</center></td>
+                          <td><center><img src="{{i.cimage}}" width="250" height="150" /></center></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+{% endblock %}

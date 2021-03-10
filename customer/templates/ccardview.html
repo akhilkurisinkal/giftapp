@@ -1,0 +1,40 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>               
+                <a class="nav-item nav-link ln" href="/mygiftcards">Gift Cards Generator</a>
+                <a class="nav-item nav-link ln" href="/ccardview">Gift Cards View</a>
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:10%;">
+            <table border="2">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+                <tr style="color:red;">
+                    <td><center>Code</center></td><td><center>Amount</center></td>
+                    <td><center>Validity</center></td><td><center>Status</center></td>
+                </tr>
+
+                {% for i in gift %}
+                    <tr style="color:blue;">
+                          <td><center>{{i.giftcode}}</center></td><td><center>{{i.amount}}</center></td>
+                          <td><center>{{i.validity}}</center></td><td><center>{{i.status}}</center></td>                       
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+{% endblock %}
